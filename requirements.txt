@@ -1,0 +1,9 @@
+python==3.8
+torch==1.11.0+cu113
+torchdrug==0.2.1
+numpy==1.24.4
+tqdm==4.67.1
+scipy==1.10.1
+torchvision==0.12.1
+dgl-cu113==0.7.1
+torch-scatter>=2.0.8
