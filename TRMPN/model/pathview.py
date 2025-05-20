@@ -182,9 +182,8 @@ if __name__ == '__main__':
         time_encoding=args.time_encoding,
         time_encoding_independent=args.time_encoding_independent
     )
-    #device = utils.get_device(args)
-    #本机上预测cpu
-    device = torch.device("cpu")
+    device = utils.get_device(args)
+
     model = model.to(device)
 #对测试集数据调用path_view函数进行路径解释
     path_view(args, model, test_list_sp, num_nodes, num_rels, entity_vocab, relation_vocab, model_name = args.pretrain_name, shownum_each_time=20)

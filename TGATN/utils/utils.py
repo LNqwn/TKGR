@@ -184,7 +184,7 @@ class Dataloader(object):
         # (batch_idx, head, rela, tail)
         sampled_edges = np.concatenate([np.expand_dims(edges[1], 1), self.graph_extended[time_stamp][edges[0]]], axis=1)
 
-        # 我把预处理时添加的自环边删除了，现在在这添加自环边（和原先的方案自环的覆盖比例不同，这一版能让旧的实体通过自环边前往新的时间片）
+        # 把预处理时添加的自环边删除了，现在在这添加自环边（和原先的方案自环的覆盖比例不同，这一版能让旧的实体通过自环边前往新的时间片）
         idd = np.vstack([nodes[:, 0], nodes[:, 1], np.ones(shape=(nodes.shape[0])) * (self.num_relation_extended - 1),
                          nodes[:, 1]]).T
         sampled_edges = np.concatenate([sampled_edges, idd], axis=0)

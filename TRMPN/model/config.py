@@ -35,8 +35,7 @@ parser.add_argument("--metric", type=list, default=['mrr', 'hits@1', 'hits@3', '
 # configuration for sequences stat
 parser.add_argument("--history_len", type=int, default=15,
                     help="history length")
-#新增0226 ==args.output_dim,
-        #args.num_layer,
+
 parser.add_argument("--output_dim", type=int, default=64,
                     help="dimension of layer input")
 parser.add_argument("--num_layer", type=int, default=6,
@@ -44,16 +43,12 @@ parser.add_argument("--num_layer", type=int, default=6,
 # configuration for layers
 parser.add_argument("--attn_dim", type=int, default=5,
                     help="dimension of layer attention")
-# parser.add_argument("--n_node_topk", type=int, default=500,
-#                     help="n_node_topk")
-# parser.add_argument("--n_edge_topk", type=int, default=-1,
-#                     help="n_edge_topk")
+
 parser.add_argument("--input_dim", type=int, default=64,
                     help="dimension of layer input")
 parser.add_argument("--hidden_dims", nargs='+', type=int, default=[64, 64, 64, 64, 64, 64],
                     help="dimension list of hidden layers")
-                      # note that you can specify this item using like this
-                      # --hidden_dims 16 16 16 16 16 16
+
 parser.add_argument("--message_func", type=str, default='distmult',
                     help="which message_func you use")
 parser.add_argument("--aggregate_func", type=str, default='pna',

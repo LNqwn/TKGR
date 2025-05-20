@@ -8,7 +8,7 @@ import os
 class TR_GNN(nn.Module):
     def __init__(self, data:Dataloader, params:EnhancedDict):
         super(TR_GNN, self).__init__()
-        # 超参数
+
         self.window_size = params.get("window_size",5)
         self.max_global_window_size = params.get("max_global_window_size",400)
         
